@@ -43,9 +43,9 @@ if(!isset($_SESSION["user_name"]))
                  </nav>
                     <div class="icons">
                     <div id="menu-btn" class="fas fa-bars"></div>
-                    <a href="search_page.php" class="fas fa-search"></a>
+                    <a href="search.php" class="fas fa-search"></a>
                     <div id="user-btn" class="fas fa-user"></div>
-                    <a href="cart.php"> <i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"> <i class="fas fa-shopping-cart"></i></a>
                     <div class="user-box">
                         <p>User_id :<span> <?php echo $_SESSION["user_id"]?></span> </p>
                         <p>username : <span><?php echo $_SESSION["user_name"]?></span> </p>
@@ -75,6 +75,7 @@ if(!isset($_SESSION["user_name"]))
         <form action="" method="post" class="box">
             <img class="image" src="images/red_queen.jpg" alt="">
             <div class="name">red_queen</div>
+            <div class="auther">by john deo(Author)</div>
             <div class="price">$200</div>
             <input type="number" min="1" name="product_quantity" value="1" class="qty">
             <input type="hidden" name="product_name" value="">
@@ -86,6 +87,7 @@ if(!isset($_SESSION["user_name"]))
    <form action="" method="post" class="box">
     <img class="image" src="images/the_world.jpg" alt="">
     <div class="name">the_world</div>
+    <div class="auther">by john petter(Author)</div>
     <div class="price">$190</div>
     <input type="number" min="1" name="product_quantity" value="1" class="qty">
     <input type="hidden" name="product_name" value="">
@@ -97,6 +99,7 @@ if(!isset($_SESSION["user_name"]))
 <form action="" method="post" class="box">
     <img class="image" src="images/darknet.jpg " alt="">
     <div class="name">darknet</div>
+    <div class="auther">by joni deo(Author)</div>
     <div class="price">$890</div>
     <input type="number" min="1" name="product_quantity" value="1" class="qty">
     <input type="hidden" name="product_name" value="">

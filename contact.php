@@ -65,9 +65,9 @@ if(isset($_POST['send'])){
                         </nav>
                         <div class="icons">
                             <div id="menu-btn" class="fas fa-bars"></div>
-                            <a href="search_page.php" class="fas fa-search"></a>
+                            <a href="search.php" class="fas fa-search"></a>
                             <div id="user-btn" class="fas fa-user"></div>
-                            <a href="cart.php"> <i class="fas fa-shopping-cart"></i></a>
+                            <a href="#"> <i class="fas fa-shopping-cart"></i></a>
                             <div class="user-box">
                             <p>User_id :<span> <?php echo $_SESSION["user_id"]?></span> </p>
                             <p>username : <span><?php echo $_SESSION["user_name"]?></span> </p>

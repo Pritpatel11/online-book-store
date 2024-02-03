@@ -291,7 +291,10 @@ html{
    font-size: 20px;
    color:var(--black);
 }
-
+.products .box-container .auther{
+    font-size: 13px;
+    font-weight: 400;
+}
 .qty{
    width: 100%;
    padding:10px 10px;
@@ -592,4 +595,37 @@ html{
 .contact form textarea{
     height: 100px;
     resize: none;
+}
+
+/* search_page */
+.search-form form{
+    max-width: 1200px;
+    margin: 20px 60px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-form form .box{
+    width: 90%;
+    padding:3px 9px;
+    border:var(--border);
+    font-size: 20px;
+    color:var(--black);
+    background-color: var(--light-bg);
+    border-radius: 5px;
+}
+.book-list{
+    margin-left: 500px;
+    margin-bottom: 30px;
+    height: 50px;
+    width: 300px;
+    /* background-color: #8e44ad; */
+    border: var(--border);
+}
+.book-list p{
+    color: var(--red);
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    margin: 10px 20px;
 }
