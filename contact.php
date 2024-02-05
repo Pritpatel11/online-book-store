@@ -55,7 +55,7 @@ if(isset($_POST['send'])){
         
                 <div class="header-2">
                     <div class="flex">
-                        <a href="#" class="logo">THE HYPE BOOK STORE.</a>
+                        <a href="#" class="logo">THE HYPE BOOK STORE</a>
                         <nav class="navbar">
                             <a href="index.php">home</a>
                             <a href="about.php">about</a>

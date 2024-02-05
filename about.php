@@ -33,7 +33,7 @@ if(!isset($_SESSION["user_name"]))
     
             <div class="header-2">
                 <div class="flex">
-                    <a href="#" class="logo">THE HYPE BOOK STORE.</a>
+                    <a href="#" class="logo">THE HYPE BOOK STORE</a>
                     <nav class="navbar">
                         <a href="index.php">home</a>
                         <a href="about.php">about</a>

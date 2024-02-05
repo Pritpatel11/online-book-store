@@ -33,7 +33,7 @@ if(!isset($_SESSION["user_name"]))
     
             <div class="header-2">
                 <div class="flex">
-                    <a href="#" class="logo">THE HYPE BOOK STORE.</a>
+                    <a href="#" class="logo">THE HYPE BOOK STORE</a>
                     <nav class="navbar">
                         <a href="index.php">home</a>
                         <a href="about.php">about</a>
@@ -70,7 +70,7 @@ if(!isset($_SESSION["user_name"]))
             <img class="image" src="images/doglapan.jpg" alt="">
             <div class="name">doglapan</div>
             <div class="auther">by Ashneer Grover (Author)</div>
-            <div class="price">$500</div>
+            <div class="price">₹500</div>
             <input type="number" min="1" name="product_quantity" value="1" class="qty">
             <input type="hidden" name="product_name" value="">
             <input type="hidden" name="product_price" value="">
@@ -82,7 +82,7 @@ if(!isset($_SESSION["user_name"]))
             <img class="image" src="images/sidhu.jpg" alt="">
             <div class="name">WHO KILLED MOOSEWALA</div>
             <div class="auther">by Jupinderjit Singh (Author)</div>
-            <div class="price">$140</div>
+            <div class="price">₹140</div>
             <input type="number" min="1" name="product_quantity" value="1" class="qty">
             <input type="hidden" name="product_name" value="">
             <input type="hidden" name="product_price" value="">
@@ -94,7 +94,7 @@ if(!isset($_SESSION["user_name"]))
         <img class="image" src="images/bhagat.jpg " alt="">
         <div class="name">Bhagat</div>
         <div class="auther">by Jupinderjit Singh (Author)</div>
-        <div class="price">$500</div>
+        <div class="price">₹500</div>
         <input type="number" min="1" name="product_quantity" value="1" class="qty">
         <input type="hidden" name="product_name" value="">
         <input type="hidden" name="product_price" value="">
@@ -112,7 +112,7 @@ if(!isset($_SESSION["user_name"]))
             <img class="image" src="images/shark.jpg" alt="">
             <div class="name">SHARK TANK INDIA</div>
             <div class="auther">by Shark Tank India (Author), Prerna Lidhoo (Author)</div>
-            <div class="price">$200</div>
+            <div class="price">₹200</div>
             <input type="number" min="1" name="product_quantity" value="1" class="qty">
             <input type="hidden" name="product_name" value="">
             <input type="hidden" name="product_price" value="">
@@ -124,7 +124,7 @@ if(!isset($_SESSION["user_name"]))
             <img class="image" src="images/adani.jpg" alt="">
             <div class="name">Gautam Adani</div>
             <div class="auther">by R.N. Bhaskar (Author)</div>
-            <div class="price">$190</div>
+            <div class="price">₹190</div>
             <input type="number" min="1" name="product_quantity" value="1" class="qty">
             <input type="hidden" name="product_name" value="">
             <input type="hidden" name="product_price" value="">
@@ -136,7 +136,7 @@ if(!isset($_SESSION["user_name"]))
         <img class="image" src="images/kher.jpg " alt="">
         <div class="name">Your Best Day Is Today!</div>
         <div class="auther">by Anupam Kher (Author)</div>
-        <div class="price">$340</div>
+        <div class="price">₹340</div>
         <input type="number" min="1" name="product_quantity" value="1" class="qty">
         <input type="hidden" name="product_name" value="">
         <input type="hidden" name="product_price" value="">

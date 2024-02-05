@@ -33,7 +33,7 @@ if(!isset($_SESSION["user_name"]))
 
         <div class="header-2">
             <div class="flex">
-                <a href="#" class="logo">THE HYPE BOOK STORE.</a>
+                <a href="#" class="logo">THE HYPE BOOK STORE</a>
                 <nav class="navbar">
                     <a href="index.php">home</a>
                     <a href="about.php">about</a>
@@ -76,7 +76,7 @@ if(!isset($_SESSION["user_name"]))
             <img class="image" src="images/red_queen.jpg" alt="">
             <div class="name">red_queen</div>
             <div class="auther">by john deo(Author)</div>
-            <div class="price">$200</div>
+            <div class="price">₹200</div>
             <input type="number" min="1" name="product_quantity" value="1" class="qty">
             <input type="hidden" name="product_name" value="">
             <input type="hidden" name="product_price" value="">
@@ -88,7 +88,7 @@ if(!isset($_SESSION["user_name"]))
     <img class="image" src="images/the_world.jpg" alt="">
     <div class="name">the_world</div>
     <div class="auther">by john petter(Author)</div>
-    <div class="price">$190</div>
+    <div class="price">₹190</div>
     <input type="number" min="1" name="product_quantity" value="1" class="qty">
     <input type="hidden" name="product_name" value="">
     <input type="hidden" name="product_price" value="">
@@ -100,7 +100,7 @@ if(!isset($_SESSION["user_name"]))
     <img class="image" src="images/darknet.jpg " alt="">
     <div class="name">darknet</div>
     <div class="auther">by joni deo(Author)</div>
-    <div class="price">$890</div>
+    <div class="price">₹890</div>
     <input type="number" min="1" name="product_quantity" value="1" class="qty">
     <input type="hidden" name="product_name" value="">
     <input type="hidden" name="product_price" value="">

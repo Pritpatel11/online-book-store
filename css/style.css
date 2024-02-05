@@ -461,6 +461,8 @@ html{
     align-items: center;
     gap:20px;
     justify-content: center;
+    margin-left: 180px;
+    
 }
  
 .reviews .box-container .box{
