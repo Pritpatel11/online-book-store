@@ -74,7 +74,7 @@
       <h3>quick links</h3>
       <a href="index.php">home</a>
       <a href="about.html">about</a>
-      <a href="#">shop</a>
+      <a href="shop.php">shop</a>
       <a href="contact.php">contact</a>
    </div>
 

@@ -37,7 +37,7 @@ if(!isset($_SESSION["user_name"]))
                 <nav class="navbar">
                     <a href="index.php">home</a>
                     <a href="about.php">about</a>
-                    <a href="#">shop</a>
+                    <a href="shop.php">shop</a>
                     <a href="contact.php">contact</a>
                     <a href="#">orders</a>
                  </nav>
@@ -69,7 +69,7 @@ if(!isset($_SESSION["user_name"]))
  
  <section class="products">
  
-    <h1 class="title">latest products</h1>
+    <h1 class="title">Popular Book's</h1>
    <!-- box-1 -->
     <div class="box-container">
         <form action="" method="post" class="box">
@@ -153,7 +153,7 @@ if(!isset($_SESSION["user_name"]))
           <h3>quick links</h3>
           <a href="index.php">home</a>
           <a href="about.html">about</a>
-          <a href="#">shop</a>
+          <a href="shop.php">shop</a>
           <a href="contact.php">contact</a>
        </div>
  

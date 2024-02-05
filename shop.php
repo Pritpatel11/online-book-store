@@ -30,7 +30,7 @@
                     <nav class="navbar">
                         <a href="index.php">home</a>
                         <a href="about.php">about</a>
-                        <a href="#">shop</a>
+                        <a href="shop.php">shop</a>
                         <a href="contact.php">contact</a>
                         <a href="#">orders</a>
                     </nav>
@@ -56,7 +56,7 @@
     </div>
     <!-- LATEST products -->
     <section class="products">
-        <h1 class="title">LATEST products</h1>
+        <h1 class="title">All book's</h1>
    <!-- box-1 -->
     <div class="box-container">
         <form action="" method="post" class="box">
@@ -147,7 +147,7 @@
       <h3>quick links</h3>
       <a href="index.php">home</a>
       <a href="about.html">about</a>
-      <a href="#">shop</a>
+      <a href="shop.php">shop</a>
       <a href="contact.php">contact</a>
    </div>
 

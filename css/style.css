@@ -351,6 +351,7 @@ html{
 .home-contact{
     background-color: var(--black);
     overflow: hidden;
+    
 }
  
 .home-contact .content{
@@ -570,7 +571,7 @@ html{
     border:var(--border);
     padding:20px;
     max-width: 450px;
-    margin: 20px 300px;
+    margin: 20px 550px;
     text-align: center;
 }
 
@@ -600,7 +601,7 @@ html{
 /* search_page */
 .search-form form{
     max-width: 1200px;
-    margin: 20px 60px;
+    margin: 20px 170px;
     display: flex;
     gap: 10px;
 }
@@ -615,7 +616,7 @@ html{
     border-radius: 5px;
 }
 .book-list{
-    margin-left: 500px;
+    margin-left: 580px;
     margin-bottom: 30px;
     height: 50px;
     width: 300px;

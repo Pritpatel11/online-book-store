@@ -59,7 +59,7 @@ if(isset($_POST['send'])){
                         <nav class="navbar">
                             <a href="index.php">home</a>
                             <a href="about.php">about</a>
-                            <a href="#">shop</a>
+                            <a href="shop.php">shop</a>
                             <a href="contact.php">contact</a>
                             <a href="#">orders</a>
                         </nav>
@@ -106,7 +106,7 @@ if(isset($_POST['send'])){
            <h3>quick links</h3>
            <a href="index.php">home</a>
            <a href="about.php">about</a>
-           <a href="#">shop</a>
+           <a href="shop.php">shop</a>
            <a href="contact.php">contact</a>
         </div>
   
