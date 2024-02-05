@@ -30,7 +30,6 @@ html{
 /* register */
 .form-container{
     height: 640px;
-    background-color: var(--light-bg);
     display: flex;
     align-items: center;
     justify-content: center;
