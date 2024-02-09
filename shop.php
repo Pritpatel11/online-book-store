@@ -39,7 +39,7 @@ if(!isset($_SESSION["user_name"]))
                         <a href="about.php">about</a>
                         <a href="shop.php">shop</a>
                         <a href="contact.php">contact</a>
-                        <a href="#">orders</a>
+                        <a href="order.php">orders</a>
                     </nav>
                     <div class="icons">
                         <div id="menu-btn" class="fas fa-bars"></div>
@@ -163,7 +163,7 @@ if(!isset($_SESSION["user_name"]))
       <a href="login.php">login</a>
       <a href="register.php">register</a>
       <a href="#">cart</a>
-      <a href="#">orders</a>
+      <a href="order.php">orders</a>
    </div>
 
    <div class="box">

@@ -56,22 +56,32 @@ if(!isset($_SESSION["user_name"]))
             </div>
         </div>
     </header>
-    <!-- search-us heading -->
-        <div class="heading">
-            <h3>Search us</h3>
-            <p> <a href="#">home</a> / search </p>
-        </div>
+    <!-- shop heading -->
+    <div class="heading">
+        <h3>your order</h3>
+        <p> <a href="#">home</a> / orders </p>
+    </div>
+    <!-- orders section -->
+    <section class="placed-orders">
 
-        <section class="search-form">
-   <form action="" method="post">
-      <input type="text" name="search" placeholder="search products..." class="box">
-      <input type="submit" name="submit" value="search" class="btn">
-   </form>
+   <h1 class="title">placed orders</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+            <p> placed on : <span>02-FEB-2024</span> </p>
+            <p> name : <span>prit</span> </p>
+            <p> number : <span>7203830516</span> </p>
+            <p> email : <span>p@gmail.com</span> </p>
+            <p> address : <span>flat no. 1, 12, ww, ww - 222</span> </p>
+            <p> payment method : <span>cash on delivery</span></p>
+            <p> your orders : <span>WHO KILLED MOOSEWALA</span> </p>
+            <p> total price : <span>₹140/-</span> </p>
+            <p> payment status :<span>pending</span> </p>
+        </div>  
+   </div>
+
 </section>
-<div class="book-list">
-<p class="empty">search something!</p>
-</div>
-
 <!-- footer -->
 <section class="footer">
 

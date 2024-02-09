@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
            <input type="password" name="password" placeholder="enter your password" required class="box">
            <input type="password" name="cpassword" placeholder="confirm your password" required class="box">
            <input type="submit" name="submit" value="register now" class="btn">
-           <p>already have an account? <a href="#">login now</a></p>
+           <p>already have an account? <a href="login.php">login now</a></p>
         </form>
      
      </div>
