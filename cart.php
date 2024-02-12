@@ -25,7 +25,7 @@
 
         <div class="header-2">
             <div class="flex">
-                <a href="#" class="logo">THE HYPE BOOK STORE</a>
+                <a href="index.php" class="logo">THE HYPE BOOK STORE</a>
                 <nav class="navbar">
                     <a href="index.php">home</a>
                     <a href="about.php">about</a>
@@ -37,7 +37,7 @@
                     <div id="menu-btn" class="fas fa-bars"></div>
                     <a href="search.php" class="fas fa-search"></a>
                     <div id="user-btn" class="fas fa-user"></div>
-                    <a href="#"> <i class="fas fa-shopping-cart"></i></a>
+                    <a href="cart.php"> <i class="fas fa-shopping-cart"></i></a>
                     <div class="user-box">
                         <p>User_id :<span><?php echo $_SESSION["user_id"]?></span> </p>
                         <p>username :<span><?php echo $_SESSION["user_name"]?></span> </p>
