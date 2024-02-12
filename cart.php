@@ -1,10 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION["user_name"]))
-{
-   // header('location:login.php');
-}
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,9 +39,9 @@ if(!isset($_SESSION["user_name"]))
                     <div id="user-btn" class="fas fa-user"></div>
                     <a href="#"> <i class="fas fa-shopping-cart"></i></a>
                     <div class="user-box">
-                        <p>User_id :<span> <?php echo $_SESSION["user_id"]?></span> </p>
-                        <p>username : <span><?php echo $_SESSION["user_name"]?></span> </p>
-                        <p>email :<span> <?php echo $_SESSION["user_email"] ?> </span> </p>
+                        <p>User_id :<span><?php echo $_SESSION["user_id"]?></span> </p>
+                        <p>username :<span><?php echo $_SESSION["user_name"]?></span> </p>
+                        <p>email :<span>  <?php echo $_SESSION["user_email"] ?></span> </p>
                         <a href="logout.php" class="delete-btn">logout</a>
                      </div>
             </div>
@@ -65,21 +59,36 @@ if(!isset($_SESSION["user_name"]))
    <h1 class="title">products added</h1>
 
    <div class="box-container">
+      <!-- box-1 -->
+      <div class="box">
+         <a href="cart.php"></a>
+         <img src="images/red_queen.jpg" alt="">
+         <div class="name">RED_QUEEN</div>
+         <div class="price">₹200/-</div>
+      </div>
+      <!-- box-2 -->
       <div class="box">
          <a href="cart.php"></a>
          <img src="images/sidhu.jpg" alt="">
          <div class="name">WHO KILLED MOOSEWALA</div>
          <div class="price">₹140/-</div>
-         <div class="sub-total"> sub total : <span>₹140/-</span> </div>
+      </div>
+      <!-- box-3 -->
+      <div class="box">
+         <a href="cart.php"></a>
+         <img src="images/shark.jpg" alt="">
+         <div class="name">SHARK TANK INDIA</div>
+         <div class="price">₹200/-</div>
       </div>
    </div>
+   
 
    <div class="delete-btn">
       <a href="#">delete all</a>
    </div>
 
    <div class="cart-total">
-      <p>grand total : <span>₹140/-</span></p>
+      <p>Total : <span>₹540/-</span></p>
       <div class="flex">
          <a href="shop.php" class="option-btn">continue shopping</a>
          <a href="checkout.php" class="btn">proceed to checkout</a>
