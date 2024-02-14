@@ -1,17 +1,127 @@
 <?php
-session_start();
+include 'conn.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>admin panel</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom admin css file link  -->
+   <link rel="stylesheet" href="css/admin.css">
+
 </head>
 <body>
-    <h1>This is a admin login page....!</h1><?php echo "admin name is:" . $_SESSION["admin_name"]. '<br>' ?>
-    <?php echo "admin email id is:" . $_SESSION["admin_email"] . '<br>'  ?>
-    <?php echo "admin id is:" . $_SESSION["admin_id"] . '<br>'  ?>
-    <a href="logout.php">logout</a>
-</body>
-</html>
+    <!-- nav -->
+    <header class="header">
+
+   <div class="flex">
+
+      <a href="admin_page.php" class="logo">Admin<span>Panel</span></a>
+
+      <nav class="navbar">
+         <a href="admin_page.php">home</a>
+         <a href="#">products</a>
+         <a href="#">orders</a>
+         <a href="#">users</a>
+         <a href="#">messages</a>
+      </nav>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+      </div>
+
+      <div class="account-box">
+         <p>username : <span>rtrt</span></p>
+         <p>email : <span>rttr</span></p>
+         <a href="logout.php" class="delete-btn">logout</a>
+         <div>new <a href="login.php">login</a> | <a href="register.php">register</a></div>
+      </div>
+
+   </div>
+
+</header>
+<!-- admin dashboard section starts  -->
+
+<section class="dashboard">
+
+   <h1 class="title">dashboard</h1>
+
+   <div class="box-container">
+<!-- box 1 -->
+      <div class="box">
+         <h3>₹410/-</h3>
+         <p>total pendings</p>
+      </div>
+   <!-- box 2 -->
+   <div class="box">
+         <h3>₹0/-</h3>
+         <p>completed payments</p>
+      </div>
+<!-- box 3 -->
+      <div class="box">
+         <h3>4</h3>
+         <p>order placed</p>
+      </div>
+<!-- box 4 -->
+      <div class="box">
+         <h3>20</h3>
+         <p>products added</p>
+      </div>
+</div>
+
+   <div class="box-container">
+         <!-- box 5 -->
+      <div class="box">
+         <?php 
+            $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE usertype = 'user'") or die('query failed');
+            $number_of_users = mysqli_num_rows($select_users);
+         ?>
+         <h3><?php echo $number_of_users; ?></h3>
+         <p>normal users</p>
+      </div>
+      <!-- box 6 -->
+      <div class="box">
+         <?php 
+            $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE usertype = 'admin'") or die('query failed');
+            $number_of_admins = mysqli_num_rows($select_admins);
+         ?>
+         <h3><?php echo $number_of_admins; ?></h3>
+         <p>admin users</p>
+      </div>
+      <!-- box 7 -->
+      <div class="box">
+         <?php 
+            $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+            $number_of_account = mysqli_num_rows($select_account);
+         ?>
+         <h3><?php echo $number_of_account; ?></h3>
+         <p>total accounts</p>
+      </div>
+      <!-- box 8 -->
+      <div class="box">
+         <?php 
+            $select_messages = mysqli_query($conn, "SELECT * FROM `contact-us`") or die('query failed');
+            $number_of_messages = mysqli_num_rows($select_messages);
+         ?>
+         <h3><?php echo $number_of_messages; ?></h3>
+         <p>new messages</p>
+      </div>
+   </div>
+
+ </section>
+
+
+
+
+
+
+
+
+
