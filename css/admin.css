@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root{
+   --purple:#8e44ad;
+   --red:#c0392b;
+   --orange:#f39c12;
+   --black:#333;
+   --white:#fff;
+   --light-color:#666;
+   --light-white:#ccc;
+   --light-bg:#f5f5f5;
+   --border:.1rem solid var(--black);
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+   font-family: 'Rubik', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition:all .2s linear;
+}
+.header{
+    position: relative;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+ 
+.header .flex{
+    display: flex;
+    align-items: center;
+    padding:30px;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1200px;
+    /* margin:0 auto; */
+}
+.header .flex .logo{
+    font-size: 25px;
+    color:var(--black);
+}
+ 
+.header .flex .logo span{
+    color:var(--purple);
+}
+ 
+.header .flex .navbar a{
+    margin:0 10px;
+    font-size: 25px;
+  color:var(--black);
+}
+ 
+.header .flex .navbar a:hover{
+    color:var(--purple);
+}
+
+.header .flex .icons div{
+    margin-left: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color:var(--black);
+}
+ 
+.header .flex .icons div:hover{
+    color:var(--purple);
+}
+ 
+.header .flex .account-box{
+    position: absolute;
+    top:120%; right:20px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    padding:14px;
+    text-align: center;
+    width: 270px;
+    display: none;
+}
+ 
+.header .flex .account-box.active{
+    display: inline-block;
+}
+ 
+.header .flex .account-box p{
+    font-size: 19px;
+    color:var(--light-color);
+    margin-bottom: 10px;
+}
+ 
+.header .flex .account-box p span{
+    color:var(--purple);
+}
+ 
+.header .flex .account-box .delete-btn{
+    margin-top: 0;
+}
+ 
+.header .flex .account-box div{
+    margin-top: 10px;
+    font-size: 19px;
+    color:var(--light-color);
+}
+ 
+.header .flex .account-box div a{
+    color:var(--orange);
+}
+ 
+#menu-btn{
+    display: none;
+}
+ /* btn */
+ .btn,
+.option-btn,
+.delete-btn,
+.white-btn{
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:10px 20px;
+    cursor: pointer;
+    color:var(--white);
+    font-size: 15px;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
+   background-color: var(--black);
+}
+
+.white-btn,
+.btn{
+   background-color: var(--purple);
+}
+
+.option-btn{
+   background-color: var(--orange);
+}
+
+.delete-btn{
+   background-color: var(--red);
+}
+
+.white-btn:hover{
+   background-color: var(--white);
+   color:var(--black);
+}
+/* admin dashboard section */
+.dashboard .title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color:var(--black);
+    font-size: 30px;
+}
+.dashboard .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin:60px 30px;
+    justify-content: space-evenly;
+}
+.dashboard .box-container .box{
+    border-radius: 5px;
+    padding: 30px;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    text-align: center;
+}
+.dashboard .box-container .box h3{
+    font-size: 25px;
+    color:var(--black); 
+}
+.dashboard .box-container .box p{
+    margin-top: 15px;
+    padding:20px;
+    background-color: var(--light-bg);
+    color:var(--purple);
+    font-size: 20px;
+    border-radius: 5px;
+    border:var(--border);
+}
+ 
+ 
+ 
