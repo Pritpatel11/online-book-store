@@ -7,7 +7,7 @@ include 'conn.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>admin panel</title>
+   <title>admin dashboard</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -26,8 +26,8 @@ include 'conn.php';
 
       <nav class="navbar">
          <a href="admin_page.php">home</a>
-         <a href="#">products</a>
-         <a href="#">orders</a>
+         <a href="admin_products.php">products</a>
+         <a href="admin_order.php">orders</a>
          <a href="#">users</a>
          <a href="#">messages</a>
       </nav>
@@ -74,9 +74,9 @@ include 'conn.php';
          <h3>20</h3>
          <p>products added</p>
       </div>
-</div>
 
-   <div class="box-container">
+
+   
          <!-- box 5 -->
       <div class="box">
          <?php 
@@ -117,7 +117,8 @@ include 'conn.php';
 
  </section>
 
-
+</body>
+</html>
 
 
 
