@@ -1,3 +1,11 @@
+<?php
+include 'conn.php';
+session_start();
+if(!isset($_SESSION["admin_name"]))
+{
+   header('location:login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +35,7 @@
       <a href="admin_products.php">products</a>
       <a href="admin_order.php">orders</a>
       <a href="admin_user.php">users</a>
-      <a href="#">messages</a>
+      <a href="admin_mes.php">messages</a>
    </nav>
 
    <div class="icons">
@@ -36,11 +44,12 @@
    </div>
 
    <div class="account-box">
-      <p>username : <span>rtrt</span></p>
-      <p>email : <span>rttr</span></p>
-      <a href="logout.php" class="delete-btn">logout</a>
-      <div>new <a href="login.php">login</a> | <a href="register.php">register</a></div>
-   </div>
+                  <p>User_id :<span> <?php echo $_SESSION["admin_id"]?></span> </p>
+                  <p>username : <span><?php echo $_SESSION["admin_name"]?></span> </p>
+                  <p>email :<span> <?php echo $_SESSION["admin_email"] ?> </span> </p>
+                  <a href="logout.php" class="delete-btn">logout</a>
+         <div>new <a href="login.php">login</a> | <a href="register.php">register</a></div>
+      </div>
 
 </div>
 <section class="orders">
@@ -141,5 +150,7 @@
 </section>
 
 </header>
+<!-- custom admin js file link  -->
+<script src="js/admin.js"></script>
 </body>
 </html>

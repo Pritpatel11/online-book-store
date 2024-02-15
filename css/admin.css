@@ -311,6 +311,7 @@
 .users .box-container .box{
     background-color: var(--white);
     padding:32px;
+    margin-top: 20px;
     border:var(--border);
     box-shadow: var(--box-shadow);
     border-radius: 5px;
@@ -325,5 +326,32 @@
 .users .box-container .box p span{
     color:var(--purple);
 }
+/* message page */
+.messages .box-container{
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    justify-content: center;
+    gap:1.5rem;
+    max-width: 1200px;
+    margin:0 auto;
+    align-items: flex-start;
+}
+.messages .box-container .box{
+    background-color: var(--white);
+    padding:25px;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+}
+.messages .box-container .box p{
+    padding-bottom: 15px;
+    font-size: 20px;
+    color:var(--light-color);
+}
+ 
+.messages .box-container .box p span{
+    color:var(--purple);
+ }
+
 
  
