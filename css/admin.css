@@ -296,5 +296,34 @@
     padding:9px 5px;
     font-size: 20px;
     color:var(--black);
- }
+}
+ /* user page */
+
+.users .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,330px);
+    justify-content: space-evenly;
+    gap:20px;
+    max-width: 1200px;
+    margin:0 auto;
+   
+}
+.users .box-container .box{
+    background-color: var(--white);
+    padding:32px;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    text-align: center;
+}
+.users .box-container .box p{
+    padding-bottom: 12px;
+    font-size: 20px;
+    color:var(--light-color);
+}
+ 
+.users .box-container .box p span{
+    color:var(--purple);
+}
+
  
