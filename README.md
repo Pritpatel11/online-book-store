@@ -42,7 +42,7 @@ A user-friendly Online Bookstore project in which users can log in or register, 
 4. Open phpmyadmin
 5. Create Database named project.
 6. Import database project.sql from downloaded folder(inside database)
-7. Open Your browser put inside “http://localhost/Project Folder Name/”
+7. Open Your browser put inside “http://localhost/Folder Name/”
 
 ### for user
 user id:p@gmail.com<br>
