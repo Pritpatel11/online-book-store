@@ -8,7 +8,6 @@ A user-friendly Online Bookstore project in which users can log in or register, 
 - Maintaining books selling history.
 - Adding and managing books.
 - User Friendly.
-- For Implementation of Http Servlets in PHP.
 - This is a Mini-project developed using html-css,js,And PHP&MYsql.<br><br>
 <span>**Admin Have Following Access for this online store site:-**</span>
 - Add New Books.
