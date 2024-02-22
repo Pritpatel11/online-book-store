@@ -1,4 +1,5 @@
 <?php
+include 'conn.php';
 session_start();
 if(!isset($_SESSION["user_name"]))
 {
@@ -72,41 +73,29 @@ if(!isset($_SESSION["user_name"]))
     <h1 class="title">Popular Book's</h1>
    <!-- box-1 -->
     <div class="box-container">
-        <form action="" method="post" class="box">
-            <img class="image" src="images/red_queen.jpg" alt="">
-            <div class="name">red_queen</div>
-            <div class="auther">by john deo(Author)</div>
-            <div class="price">₹200</div>
-            <input type="number" min="1" name="product_quantity" value="1" class="qty">
-            <input type="hidden" name="product_name" value="">
-            <input type="hidden" name="product_price" value="">
-            <input type="hidden" name="product_image" value="">
-            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-        </form>
-   <!-- box-2 -->
-   <form action="" method="post" class="box">
-    <img class="image" src="images/the_world.jpg" alt="">
-    <div class="name">the_world</div>
-    <div class="auther">by john petter(Author)</div>
-    <div class="price">₹190</div>
-    <input type="number" min="1" name="product_quantity" value="1" class="qty">
-    <input type="hidden" name="product_name" value="">
-    <input type="hidden" name="product_price" value="">
-    <input type="hidden" name="product_image" value="">
-    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-</form>
-<!-- box-3 -->
-<form action="" method="post" class="box">
-    <img class="image" src="images/darknet.jpg " alt="">
-    <div class="name">darknet</div>
-    <div class="auther">by joni deo(Author)</div>
-    <div class="price">₹890</div>
-    <input type="number" min="1" name="product_quantity" value="1" class="qty">
-    <input type="hidden" name="product_name" value="">
-    <input type="hidden" name="product_price" value="">
-    <input type="hidden" name="product_image" value="">
-    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-</form>
+    <?php  
+         $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 2") or die('query failed');
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+      ?>
+     <form action="" method="post" class="box">
+      <img class="image" src="images/<?php echo $fetch_products['image']; ?>" alt="">
+      <div class="name"><?php echo $fetch_products['name']; ?></div>
+      <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
+      <div class="auther"><?php echo $fetch_products['auther_name']; ?></div>
+      <input type="number" min="1" name="product_quantity" value="1" class="qty">
+      <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
+      <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+      <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+      <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+     </form>
+      <?php
+         }
+      }else{
+         echo "no products added yet!";
+      }
+      ?>
+   
     </div>
 
     

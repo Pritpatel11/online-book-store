@@ -5,6 +5,37 @@ if(!isset($_SESSION["admin_name"]))
 {
    header('location:login.php');
 }
+
+if(isset($_POST['add_product'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $price = $_POST['price'];
+   $image = $_FILES['image']['name'];
+   $auther = $_POST['Authorname'];
+   $image_size = $_FILES['image']['size'];
+   $image_tmp_name = $_FILES['image']['tmp_name'];
+   $image_folder = 'images/'.$image;
+   
+
+   $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
+
+   if(mysqli_num_rows($select_product_name) > 0){
+      echo "product name already added";
+   }else{
+      $add_product_query = mysqli_query($conn, "INSERT INTO `products` (`name`, `price`, `image`, `auther_name`) VALUES ('$name', '$price', '$image', '$auther')") or die('query failed 2');
+
+      if($add_product_query){
+         if($image_size > 2000000){
+            echo "image size is too large";
+         }else{
+            move_uploaded_file($image_tmp_name, $image_folder);
+            echo "product added successfully!";
+         }
+      }else{
+         echo "product could not be added!";
+      }
+   }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,38 +109,26 @@ if(!isset($_SESSION["admin_name"]))
 <section class="show-products">
 
    <div class="box-container">
-
-      
+   <?php
+         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+      ?>
       <div class="box">
-         <img src="images/bhagat.jpg " alt="">
-         <div class="name">Bhagat</div>
-         <div class="price">₹190/-</div>
-         <div class="auther">by Jupinderjit Singh (Author)</div>
+         <img src="images/<?php echo $fetch_products['image']; ?>" alt="">
+         <div class="name"><?php echo $fetch_products['name']; ?></div>
+         <div class="auther"><?php echo $fetch_products['auther_name']; ?></div>
+         <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
          <a href="#" class="option-btn">update</a>
          <a href="#" class="delete-btn">delete</a>
       </div>
-
-      <!-- box 2 -->
-      <div class="box">
-         <img src="images/sidhu.jpg" alt="">
-         <div class="name">WHO KILLED MOOSEWALA</div>
-         <div class="price">₹140/-</div>
-         <div class="auther">by Jupinderjit Singh (Author)</div>
-         <a href="#" class="option-btn">update</a>
-         <a href="#" class="delete-btn">delete</a>
-      </div>
-
-      <!-- box 3 -->
-      <div class="box">
-         <img src="images/doglapan.jpg" alt="">
-         <div class="name">doglapan</div>
-         <div class="auther">by Ashneer Grover (Author)</div>
-         <div class="price">₹500/-</div>
-         <a href="#" class="option-btn">update</a>
-         <a href="#" class="delete-btn">delete</a>
-      </div>
-      
-    
+      <?php
+         }
+      }else{
+         echo "no products added yet!";
+      }
+      ?>
+   </div>
    </div>
 
 </section>

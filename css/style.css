@@ -273,7 +273,7 @@ html{
    border-radius: 10px;
    background-color: var(--white);
    box-shadow: var(--box-shadow);
-   padding:10px;
+   padding:5px;
    text-align: center;
    border:var(--border);
    position: relative;
@@ -728,3 +728,5 @@ html{
     margin-top: 15px;
     justify-content: center;
 }
+
+/* media queries  */

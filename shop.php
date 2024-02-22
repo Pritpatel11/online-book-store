@@ -1,4 +1,5 @@
 <?php
+include 'conn.php';
 session_start();
 if(!isset($_SESSION["user_name"]))
 {
@@ -66,83 +67,29 @@ if(!isset($_SESSION["user_name"]))
         <h1 class="title">All book's</h1>
    <!-- box-1 -->
     <div class="box-container">
-        <form action="" method="post" class="box">
-            <img class="image" src="images/doglapan.jpg" alt="">
-            <div class="name">doglapan</div>
-            <div class="auther">by Ashneer Grover (Author)</div>
-            <div class="price">₹500</div>
-            <input type="number" min="1" name="product_quantity" value="1" class="qty">
-            <input type="hidden" name="product_name" value="">
-            <input type="hidden" name="product_price" value="">
-            <input type="hidden" name="product_image" value="">
-            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-        </form>
-   <!-- box-2 -->
-        <form action="" method="post" class="box">
-            <img class="image" src="images/sidhu.jpg" alt="">
-            <div class="name">WHO KILLED MOOSEWALA</div>
-            <div class="auther">by Jupinderjit Singh (Author)</div>
-            <div class="price">₹140</div>
-            <input type="number" min="1" name="product_quantity" value="1" class="qty">
-            <input type="hidden" name="product_name" value="">
-            <input type="hidden" name="product_price" value="">
-            <input type="hidden" name="product_image" value="">
-            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-        </form>
-<!-- box-3 -->
-    <form action="" method="post" class="box">
-        <img class="image" src="images/bhagat.jpg " alt="">
-        <div class="name">Bhagat</div>
-        <div class="auther">by Jupinderjit Singh (Author)</div>
-        <div class="price">₹500</div>
-        <input type="number" min="1" name="product_quantity" value="1" class="qty">
-        <input type="hidden" name="product_name" value="">
-        <input type="hidden" name="product_price" value="">
-        <input type="hidden" name="product_image" value="">
-        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-    </form>
-    </div>
-</section>
-
-    <!-- LATEST products -->
-    <section class="products">
-   <!-- box-1 -->
-    <div class="box-container">
-        <form action="" method="post" class="box">
-            <img class="image" src="images/shark.jpg" alt="">
-            <div class="name">SHARK TANK INDIA</div>
-            <div class="auther">by Shark Tank India (Author), Prerna Lidhoo (Author)</div>
-            <div class="price">₹200</div>
-            <input type="number" min="1" name="product_quantity" value="1" class="qty">
-            <input type="hidden" name="product_name" value="">
-            <input type="hidden" name="product_price" value="">
-            <input type="hidden" name="product_image" value="">
-            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-        </form>
-   <!-- box-2 -->
-        <form action="" method="post" class="box">
-            <img class="image" src="images/adani.jpg" alt="">
-            <div class="name">Gautam Adani</div>
-            <div class="auther">by R.N. Bhaskar (Author)</div>
-            <div class="price">₹190</div>
-            <input type="number" min="1" name="product_quantity" value="1" class="qty">
-            <input type="hidden" name="product_name" value="">
-            <input type="hidden" name="product_price" value="">
-            <input type="hidden" name="product_image" value="">
-            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-        </form>
-<!-- box-3 -->
-    <form action="" method="post" class="box">
-        <img class="image" src="images/kher.jpg " alt="">
-        <div class="name">Your Best Day Is Today!</div>
-        <div class="auther">by Anupam Kher (Author)</div>
-        <div class="price">₹340</div>
-        <input type="number" min="1" name="product_quantity" value="1" class="qty">
-        <input type="hidden" name="product_name" value="">
-        <input type="hidden" name="product_price" value="">
-        <input type="hidden" name="product_image" value="">
-        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-    </form>
+    <?php  
+         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+      ?>
+     <form action="" method="post" class="box">
+      <img class="image" src="images/<?php echo $fetch_products['image']; ?>" alt="">
+      <div class="name"><?php echo $fetch_products['name']; ?></div>
+      <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
+      <div class="auther"><?php echo $fetch_products['auther_name']; ?></div>
+      <input type="number" min="1" name="product_quantity" value="1" class="qty">
+      <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
+      <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+      <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+      <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+     </form>
+      <?php
+         }
+      }else{
+         echo 'no products added yet!</p>';
+      }
+      ?>
+   
     </div>
 </section>
 <!-- footer -->

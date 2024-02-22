@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 26, 2024 at 05:15 AM
+-- Generation Time: Feb 22, 2024 at 01:04 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -45,6 +45,31 @@ CREATE TABLE IF NOT EXISTS `contact-us` (
 INSERT INTO `contact-us` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
 (15, 5, 'prit', 'p@gmail.com', '232323', 'dfsf\r\n'),
 (16, 5, 'prit22', 'prit55@gmail.com', '121', 'hello ji jese ho\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `price` int NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `auther_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `image`, `auther_name`) VALUES
+(3, 'sidhu', 200, 'sidhu.jpg', 'by Jupinderjit Singh (Author)'),
+(5, 'Bhagat Singh', 500, 'bhagat.jpg', 'by Jupinderjit Singh (Author)'),
+(6, 'adani', 190, 'adani.jpg', 'by R.N. Bhaskar (Author)');
 
 -- --------------------------------------------------------
 
