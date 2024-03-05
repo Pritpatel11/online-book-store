@@ -86,7 +86,7 @@ if(!isset($_SESSION["user_name"]))
       <?php
          }
       }else{
-         echo 'no products added yet!</p>';
+        echo '<p class="empty">no products added yet!</p>';
       }
       ?>
    

@@ -18,10 +18,10 @@ if(isset($_POST['send'])){
    $select_message = mysqli_query($conn, "SELECT * FROM `contact-us` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
 
    if(mysqli_num_rows($select_message) > 0){
-      echo "message sent already!";
+    $message[] = 'message sent already!';
    }else{
       mysqli_query($conn, "INSERT INTO `contact-us`(user_id, name, email, number, message) VALUES('$user_id', '$name', '$email', '$number', '$msg')") or die('query failed');
-      echo "message sent successfully!";
+      $message[] ='message sent successfully!';
    }
 
 }
@@ -37,6 +37,18 @@ if(isset($_POST['send'])){
     <title>contact-us</title>
 </head>
 <body>
+<?php 
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
     <div class="main">
         <!-- nav bar -->
         <header class="header">

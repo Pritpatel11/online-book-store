@@ -261,12 +261,14 @@ html{
    color: var(--black);
    font-size: 30px;
 }
+/* shope */
 .products .box-container{
-   max-width: 1200px;
-   margin:20px auto;
-   display: flex;
-   align-items: flex-start;
-   justify-content: space-evenly;
+    max-width: 1200px;
+    margin:20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+    justify-content: center;
 }
 
 .products .box-container .box{
@@ -615,21 +617,6 @@ html{
     background-color: var(--light-bg);
     border-radius: 5px;
 }
-.book-list{
-    margin-left: 580px;
-    margin-bottom: 30px;
-    height: 50px;
-    width: 300px;
-    /* background-color: #8e44ad; */
-    border: var(--border);
-}
-.book-list p{
-    color: var(--red);
-    font-size: 20px;
-    font-weight: 800;
-    text-align: center;
-    margin: 10px 20px;
-}
 /* order page */
 .placed-orders .box-container{
     max-width: 1200px;
@@ -658,7 +645,7 @@ html{
 } 
 /* cart page */
 .shopping-cart .box-container{
-   max-width: 1200px;
+    max-width: 1200px;
    display: flex;
    justify-content: space-evenly;
    margin-left: 180px;
@@ -728,5 +715,40 @@ html{
     margin-top: 15px;
     justify-content: center;
 }
+.message{
+   margin:0 auto;
+   max-width: 1200px;
+   background-color: var(--white);
+   padding:10px;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   
+}
+ 
+.message span{
+    font-size: 20px;
+    color:var(--black);
+}
+ 
+.message i{
+    cursor: pointer;
+    color:var(--red);
+    font-size: 2.5rem;
+}
+ 
+.message i:hover{
+    transform: rotate(90deg);
+    transition: 0.5s ease-in-out;
+}
+.empty{
+    padding:15px;
+    text-align: center;
+    border:var(--border);
+    background-color: var(--white);
+    color:var(--red);
+    font-size: 20px;
+}
+ 
 
 /* media queries  */

@@ -220,9 +220,10 @@
 .show-products .box-container{
     max-width: 1200px;
     margin:20px auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap:20px;
+    justify-content: center;
 }
  
 .show-products{

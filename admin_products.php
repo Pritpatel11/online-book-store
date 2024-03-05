@@ -36,6 +36,14 @@ if(isset($_POST['add_product'])){
       }
    }
 }
+if(isset($_GET['delete'])){
+   $delete_id = $_GET['delete'];
+   $delete_image_query = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id'") or die('query failed');
+   $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
+   unlink('uploaded_img/'.$fetch_delete_image['image']);
+   mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
+   header('location:admin_products.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +128,7 @@ if(isset($_POST['add_product'])){
          <div class="auther"><?php echo $fetch_products['auther_name']; ?></div>
          <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
          <a href="#" class="option-btn">update</a>
-         <a href="#" class="delete-btn">delete</a>
+         <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>
       <?php
          }

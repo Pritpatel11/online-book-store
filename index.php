@@ -16,6 +16,8 @@ if(!isset($_SESSION["user_name"]))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
+
+
 <body>
    <div class="main">
     <header class="header">
@@ -74,7 +76,7 @@ if(!isset($_SESSION["user_name"]))
    <!-- box-1 -->
     <div class="box-container">
     <?php  
-         $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 2") or die('query failed');
+         $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 3") or die('query failed');
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
@@ -92,7 +94,7 @@ if(!isset($_SESSION["user_name"]))
       <?php
          }
       }else{
-         echo "no products added yet!";
+         echo '<p class="empty">no products added yet!</p>';
       }
       ?>
    
@@ -175,6 +177,9 @@ if(!isset($_SESSION["user_name"]))
  
  </section>
 </div>
+<!-- gsap file link -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="js/index.js"></script>
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 </body>
