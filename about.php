@@ -12,6 +12,7 @@ if(!isset($_SESSION["user_name"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <title>About</title>
 </head>
 <body>
@@ -69,8 +70,7 @@ if(!isset($_SESSION["user_name"]))
                </div>
                <div class="content">
                   <h3>why choose us?</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatibus aut hic molestias, reiciendis natus fuga, cumque excepturi veniam ratione iure. Excepturi fugiat placeat iusto facere id officia assumenda temporibus?</p>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatis?</p>
                   <a href="#" class="btn">contact us</a>
                </div>
             </div>

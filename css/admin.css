@@ -353,7 +353,32 @@
  
 .messages .box-container .box p span{
     color:var(--purple);
- }
-
+}
+.message{
+    margin:0 auto;
+    max-width: 1200px;
+    background-color: var(----light-color);
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+  
+.message span{
+     font-size: 20px;
+     color:var(--black);
+}
+  
+.message i{
+     cursor: pointer;
+     color:var(--red);
+     font-size: 2.5rem;
+}
+  
+.message i:hover{
+     transform: rotate(90deg);
+     transition: 0.5s ease-in-out;
+}
 
  

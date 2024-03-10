@@ -5,6 +5,11 @@ if(!isset($_SESSION["admin_name"]))
 {
    header('location:login.php');
 }
+if(isset($_GET['delete'])){
+   $delete_id = $_GET['delete'];
+   mysqli_query($conn, "DELETE FROM `contact-us` WHERE id = '$delete_id'") or die('query failed');
+   header('location:admin_mes.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +24,7 @@ if(!isset($_SESSION["admin_name"]))
 
    <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/admin.css">
+   <link rel="icon" type="image/png" href="images/logo.png">
 
 </head>
 <body>
@@ -72,7 +78,7 @@ if(!isset($_SESSION["admin_name"]))
       <p> number : <span><?php echo $fetch_message['number']; ?></span> </p>
       <p> email : <span><?php echo $fetch_message['email']; ?></span> </p>
       <p> message : <span><?php echo $fetch_message['message']; ?></span> </p>
-      <a href="admin_contacts.php?delete=<?php echo $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete message</a>
+      <a href="admin_mes.php?delete=<?php echo $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete message</a>
    </div>
    <?php
       };

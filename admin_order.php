@@ -19,6 +19,7 @@ if(!isset($_SESSION["admin_name"]))
 
    <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/admin.css">
+   <link rel="icon" type="image/png" href="images/logo.png">
 
 </head>
 <body>

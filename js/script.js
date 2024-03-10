@@ -4,3 +4,9 @@ document.querySelector('#user-btn').onclick = () =>{
    userBox.classList.toggle('active');
 }
 
+let navbar = document.querySelector('.header .header-2 .navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+   navbar.classList.toggle('active');
+   userBox.classList.remove('active');
+}

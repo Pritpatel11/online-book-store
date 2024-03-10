@@ -20,19 +20,19 @@ if(isset($_POST['add_product'])){
    $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
 
    if(mysqli_num_rows($select_product_name) > 0){
-      echo "product name already added";
+      $message[] = 'product name already added';
    }else{
       $add_product_query = mysqli_query($conn, "INSERT INTO `products` (`name`, `price`, `image`, `auther_name`) VALUES ('$name', '$price', '$image', '$auther')") or die('query failed 2');
 
       if($add_product_query){
          if($image_size > 2000000){
-            echo "image size is too large";
+            $message[] = 'image size is too large';
          }else{
             move_uploaded_file($image_tmp_name, $image_folder);
-            echo "product added successfully!";
+            $message[] = 'product added successfully!';
          }
       }else{
-         echo "product could not be added!";
+         $message[] = 'product could not be added!';
       }
    }
 }
@@ -58,9 +58,22 @@ if(isset($_GET['delete'])){
 
    <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/admin.css">
+   <link rel="icon" type="image/png" href="images/logo.png">
 
 </head>
 <body>
+<?php 
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
     <!-- nav -->
     <header class="header">
 
