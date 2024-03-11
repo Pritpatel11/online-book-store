@@ -1,10 +1,29 @@
 <?php
 include 'conn.php';
 session_start();
+$user_id = $_SESSION['user_id'];
 if(!isset($_SESSION["user_name"]))
 {
    header('location:login.php');
 }
+if(isset($_POST['add_to_cart'])){
+
+    $product_name = $_POST['product_name'];
+    $auther_name = $_POST['auther_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
+ 
+    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+
+   if(mysqli_num_rows($check_cart_numbers) > 0){
+      $message[] = 'already added to cart!';
+   }else{
+      mysqli_query($conn, "INSERT INTO `cart` (`user_id`,`name`, `auther_name`, `price`, `quantity`, `image`) VALUES ('$user_id','$product_name', '$auther_name', ' $product_price', '$product_quantity', '$product_image')") or die('query failed');
+      $message[] = 'product added to cart!';
+   }
+ 
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +66,11 @@ if(!isset($_SESSION["user_name"]))
                         <div id="menu-btn" class="fas fa-bars"></div>
                         <a href="search.php" class="fas fa-search"></a>
                         <div id="user-btn" class="fas fa-user"></div>
-                        <a href="cart.php"> <i class="fas fa-shopping-cart"></i></a>
+                        <?php
+                            $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+                            $cart_rows_number = mysqli_num_rows($select_cart_number); 
+                        ?>
+                        <a href="cart.php"> <i class="fas fa-shopping-cart"></i><span>(<?php echo $cart_rows_number; ?>)</span></a>
                         <div class="user-box">
                         <p>User_id :<span> <?php echo $_SESSION["user_id"]?></span> </p>
                         <p>username : <span><?php echo $_SESSION["user_name"]?></span> </p>
@@ -82,6 +105,7 @@ if(!isset($_SESSION["user_name"]))
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+      <input type="hidden" name="auther_name" value="<?php echo $fetch_products['auther_name']; ?>">
       <input type="submit" value="add to cart" name="add_to_cart" class="btn">
      </form>
       <?php

@@ -77,8 +77,12 @@ if(!isset($_SESSION["admin_name"]))
          <p>order placed</p>
       </div>
 <!-- box 4 -->
-      <div class="box">
-         <h3>20</h3>
+<div class="box">
+         <?php 
+            $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+            $number_of_products = mysqli_num_rows($select_products);
+         ?>
+         <h3><?php echo $number_of_products; ?></h3>
          <p>products added</p>
       </div>
 
