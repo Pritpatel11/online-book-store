@@ -33,9 +33,21 @@ if(isset($_POST['add_to_cart'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <title>search_page</title>
+    <title>shop</title>
 </head>
 <body>
+<?php 
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
    <div class="main">
     <!-- nav bar -->
     <header class="header">

@@ -37,9 +37,19 @@ if(isset($_POST['add_to_cart'])){
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
-
 <body>
+<?php 
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
    <div class="main">
     <header class="header">
     <div class="header">

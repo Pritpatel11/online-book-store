@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 12, 2024 at 02:14 PM
+-- Generation Time: Mar 13, 2024 at 02:05 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -37,20 +37,16 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `quantity` int NOT NULL,
   `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `name`, `auther_name`, `price`, `quantity`, `image`) VALUES
-(85, 1, 'shark', 'deep', 3030, 1, 'shark.jpg'),
-(87, 1, 'adani', 'prit', 200, 1, 'adani.jpg'),
-(88, 1, 'bbb', 'prit', 3030, 1, 'shattered.jpg'),
-(89, 1, 'holy_ghosts', 'deep', 3000, 7, 'holy_ghosts.jpg'),
-(90, 1, 'sidhu', 'prit', 277777, 100, 'sidhu.jpg'),
-(91, 5, 'adani', 'prit', 200, 1, 'adani.jpg'),
-(93, 5, 'sidhu', 'prit', 277777, 1, 'sidhu.jpg');
+(91, 5, 'adani', 'prit', 200, 2, 'adani.jpg'),
+(93, 5, 'sidhu', 'prit', 277777, 1, 'sidhu.jpg'),
+(94, 5, 'shark', 'deep', 3030, 1, 'shark.jpg');
 
 -- --------------------------------------------------------
 
