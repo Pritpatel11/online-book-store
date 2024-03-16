@@ -13,29 +13,39 @@ if(isset($_POST['submit'])){
    if(mysqli_num_rows($select_users) > 0){
 
       $row = mysqli_fetch_assoc($select_users);
-         // for admin
-      if($row["usertype"] == "admin"){
+      if($row['is_verified']==1)
+      {
+          // for admin
+         if($row["usertype"] == "admin"){
 
-         $_SESSION["admin_name"]=$row['name'];
-         $_SESSION["admin_email"]=$row['email'];
-         $_SESSION["admin_id"]=$row['id'];
-         header('location:admin_page.php');
-
-         // for user
-      }elseif($row["usertype"] == "user"){
-
-         $_SESSION["user_name"]= $row['name'];
-         $_SESSION["user_email"]= $row['email'];
-         $_SESSION["user_id"]= $row['id'];
-         header('location:index.php');
-
+            $_SESSION["admin_name"]=$row['name'];
+            $_SESSION["admin_email"]=$row['email'];
+            $_SESSION["admin_id"]=$row['id'];
+            header('location:admin_page.php');
+   
+            // for user
+         }
+         elseif($row["usertype"] == "user"){
+   
+            $_SESSION["user_name"]= $row['name'];
+            $_SESSION["user_email"]= $row['email'];
+            $_SESSION["user_id"]= $row['id'];
+            header('location:index.php');
+   
+         }
+   
       }
-
-   }else{
-      $message[] = 'incorrect email or password!';
-   }
-
-
+      else
+      {
+         $message[] = ' email is not verifyed!';
+         
+      }
+      }
+      else
+      {
+         $message[] = 'incorrect email or password!';
+      }
+      
 }
 ?>
 <!DOCTYPE html>
@@ -66,14 +76,17 @@ if(isset($message)){
         <form action="login.php" method="post">
            <h3>login now</h3>
            <input type="email" name="email" placeholder="enter your email" required autofocus class="box">
-           <input type="password" name="password" placeholder="enter your password" required class="box">
+           <input type="password" name="password" id="password" placeholder="enter your password" required class="box">
+           <img src="images/icons8-eye-50.png" alt="" onclick='shp()' id="show_eye" class="img3">
+           <img src="images/1013502-200.png" alt="" onclick='shp()' id="hide_eye"  class="img3">
            <input type="submit" name="submit" value="login now" class="btn">
            <p>don't have an account? <a href="register.php">register now</a></p>
         </form>
      </div>
 
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="js/gsap.js"></script>
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="js/gsap.js"></script> -->
+      <script src="js/script.js"></script>
 </body>
 </html>

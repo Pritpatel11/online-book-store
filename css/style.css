@@ -32,6 +32,7 @@ html{
     padding: 20px;
     height: 640px;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
 }
@@ -44,6 +45,7 @@ html{
     border:var(--border);
     background-color: var(--white);
     text-align: center;
+    position: relative;
 }
  
 .form-container form h3{
@@ -55,7 +57,7 @@ html{
 }
  
 .form-container form .box{
-    width: 100%;
+    width:100%;
     border-radius: 5px;
     background-color: var(--light-bg);
     padding:10px 20px;
@@ -64,6 +66,26 @@ html{
     border:var(--border);
     margin:10px 0;
 }
+.form-container form .img1{
+    position: absolute;
+    top:56.5%;
+    left: 85%;
+    width: 35px;
+    
+}
+.form-container form .img2{
+    position: absolute;
+    top:70%;
+    left: 85%;
+    width: 35px;
+}
+.form-container form .img3{
+    position: absolute;
+    top:50%;
+    left: 85%;
+    width: 35px;
+}
+
 /* btn */
 .btn,
 .option-btn,
@@ -209,10 +231,11 @@ html{
     border:var(--border);
     padding:14px;
     text-align: center;
-    width: 270px;
+    width: 300px;
     display: none;
+    animation: fadeIn .2s linear;
 }
- 
+
 .user-box.active{
     display: inline-block;
 }
@@ -226,7 +249,13 @@ html{
 .user-box p span{
     color:var(--purple);
 }
-
+@keyframes fadeIn {
+    0%{
+       transform: translateY(10px);
+       opacity: .2s;
+    }
+ }
+ 
 /* home page */
 .home{
    min-height: 70vh;
@@ -609,20 +638,24 @@ html{
 /* search_page */
 .search-form form{
     max-width: 1200px;
-    margin: 20px 170px;
+    margin:10px 20px;
     display: flex;
-    gap: 10px;
-}
-
-.search-form form .box{
-    width: 90%;
-    padding:3px 9px;
+    gap:10px;
+ }
+ 
+ .search-form form .btn{
+    margin-top: 0;
+ }
+ 
+ .search-form form .box{
+    width: 100%;
+    padding:10px 10px;
     border:var(--border);
     font-size: 20px;
     color:var(--black);
     background-color: var(--light-bg);
     border-radius: 5px;
-}
+ }
 /* order page */
 .placed-orders .box-container{
     max-width: 1200px;
