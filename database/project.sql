@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 13, 2024 at 02:05 PM
+-- Generation Time: Mar 16, 2024 at 03:36 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -37,16 +37,16 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `quantity` int NOT NULL,
   `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `name`, `auther_name`, `price`, `quantity`, `image`) VALUES
-(91, 5, 'adani', 'prit', 200, 2, 'adani.jpg'),
-(93, 5, 'sidhu', 'prit', 277777, 1, 'sidhu.jpg'),
-(94, 5, 'shark', 'deep', 3030, 1, 'shark.jpg');
+(100, 0, 'adani', 'prit', 200, 1, 'adani.jpg'),
+(101, 0, 'sidhu', 'prit', 277777, 1, 'sidhu.jpg'),
+(102, 0, 'shark', 'deep', 3030, 1, 'shark.jpg');
 
 -- --------------------------------------------------------
 
@@ -117,19 +117,26 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(100) NOT NULL,
   `ph_no` varchar(15) NOT NULL,
   `usertype` varchar(20) NOT NULL DEFAULT 'user',
+  `verification_code` varchar(255) NOT NULL,
+  `is_verified` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `ph_no` (`ph_no`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `ph_no`, `usertype`) VALUES
-(1, 'admin', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', '1112223334', 'admin'),
-(2, 'prit', 'pritpatel@gmail.com', 'a7becfc3b9343c012c0c9b2a81969bb0', '295295295', 'user'),
-(5, 'prit', 'p@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '12121211', 'user');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `ph_no`, `usertype`, `verification_code`, `is_verified`) VALUES
+(1, 'admin', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', '1112223334', 'admin', '', 0),
+(2, 'prit', 'pritpatel@gmail.com', 'a7becfc3b9343c012c0c9b2a81969bb0', '295295295', 'user', '', 0),
+(5, 'prit', 'p@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '12121211', 'user', '', 0),
+(8, 'swss', 'prit1111@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '123456789', 'user', '405e6e5118cc6a2b5c01ff7454597011', 0),
+(24, 'prit', 'pritkumarpatel21@gnu.ac.in', 'c20ad4d76fe97759aa27a0c99bff6710', '1234567891', 'user', '2e0e328bd8776be10adfa7307dfd9245', 1),
+(25, 'parva', 'parvapatel21@gnu.ac.in', 'c20ad4d76fe97759aa27a0c99bff6710', '1265844433', 'user', '06ba3740272123de00c092907eaa280d', 0),
+(33, 'deeo', 'deep111111@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '45462454', 'user', '09ad268ea0741b4fbf7b476a9da2f336', 0),
+(34, 'prit', 'pritpatel3030@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '1456329', 'user', '290350f200ef3bcad2f266cc07c503b8', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
