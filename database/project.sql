@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 16, 2024 at 03:36 PM
+-- Generation Time: Mar 26, 2024 at 01:01 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `quantity` int NOT NULL,
   `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cart`
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `cart` (
 INSERT INTO `cart` (`id`, `user_id`, `name`, `auther_name`, `price`, `quantity`, `image`) VALUES
 (100, 0, 'adani', 'prit', 200, 1, 'adani.jpg'),
 (101, 0, 'sidhu', 'prit', 277777, 1, 'sidhu.jpg'),
-(102, 0, 'shark', 'deep', 3030, 1, 'shark.jpg');
+(102, 0, 'shark', 'deep', 3030, 1, 'shark.jpg'),
+(106, 34, 'shark', 'deep', 3030, 1, 'shark.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,6 +77,35 @@ INSERT INTO `contact-us` (`id`, `user_id`, `name`, `email`, `number`, `message`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `number` varchar(12) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `method` varchar(50) NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `total_products` varchar(1000) NOT NULL,
+  `total_price` int NOT NULL,
+  `placed_on` varchar(50) NOT NULL,
+  `payment_status` varchar(20) NOT NULL DEFAULT 'pending',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
+(12, 34, 'prit', '1212121212', 'prit@gmail.com', 'cash on delivery', 'flat no. 32, dqewdq, mehsana, india - 384002', ', adani (1) ', 200, '26-Mar-2024', 'pending');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -85,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `name` varchar(100) NOT NULL,
   `price` int NOT NULL,
   `image` varchar(100) NOT NULL,
-  `auther_name` varchar(100) NOT NULL,
+  `auther_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -136,7 +166,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `ph_no`, `usertype`, `ve
 (24, 'prit', 'pritkumarpatel21@gnu.ac.in', 'c20ad4d76fe97759aa27a0c99bff6710', '1234567891', 'user', '2e0e328bd8776be10adfa7307dfd9245', 1),
 (25, 'parva', 'parvapatel21@gnu.ac.in', 'c20ad4d76fe97759aa27a0c99bff6710', '1265844433', 'user', '06ba3740272123de00c092907eaa280d', 0),
 (33, 'deeo', 'deep111111@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '45462454', 'user', '09ad268ea0741b4fbf7b476a9da2f336', 0),
-(34, 'prit', 'pritpatel3030@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '1456329', 'user', '290350f200ef3bcad2f266cc07c503b8', 1);
+(34, 'prit', 'pritpatel3030@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', '1456329', 'admin', '290350f200ef3bcad2f266cc07c503b8', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -63,17 +63,41 @@ if(!isset($_SESSION["admin_name"]))
    <div class="box-container">
 <!-- box 1 -->
       <div class="box">
-         <h3>₹410/-</h3>
+         <?php
+            $total_pendings = 0;
+            $select_pending = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
+            if(mysqli_num_rows($select_pending) > 0){
+               while($fetch_pendings = mysqli_fetch_assoc($select_pending)){
+                  $total_price = $fetch_pendings['total_price'];
+                  $total_pendings += $total_price;
+               };
+            };
+         ?>
+         <h3>₹<?php echo $total_pendings; ?>/-</h3>
          <p>total pendings</p>
       </div>
    <!-- box 2 -->
    <div class="box">
-         <h3>₹0/-</h3>
+         <?php
+            $total_completed = 0;
+            $select_completed = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'completed'") or die('query failed');
+            if(mysqli_num_rows($select_completed) > 0){
+               while($fetch_completed = mysqli_fetch_assoc($select_completed)){
+                  $total_price = $fetch_completed['total_price'];
+                  $total_completed += $total_price;
+               };
+            };
+         ?>
+         <h3>₹<?php echo $total_completed; ?>/-</h3>
          <p>completed payments</p>
       </div>
 <!-- box 3 -->
       <div class="box">
-         <h3>4</h3>
+         <?php 
+            $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
+            $number_of_orders = mysqli_num_rows($select_orders);
+         ?>
+         <h3><?php echo $number_of_orders; ?></h3>
          <p>order placed</p>
       </div>
 <!-- box 4 -->
