@@ -115,7 +115,7 @@ if(isset($message)){
          <img src="images/<?php echo $fetch_cart['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_cart['name']; ?></div>
          <div class="auther"><?php echo $fetch_cart['auther_name']; ?></div>
-         <div class="price">$<?php echo $fetch_cart['price']; ?>/-</div>
+         <div class="price">₹<?php echo $fetch_cart['price']; ?>/-</div>
          <form action="" method="post">
             <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
             <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
