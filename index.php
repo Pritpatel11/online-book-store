@@ -127,7 +127,13 @@ if(isset($message)){
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
       <input type="hidden" name="auther_name" value="<?php echo $fetch_products['auther_name']; ?>">
-      <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+      <?php
+      if(isset($_SESSION['user_id'])){
+         echo '<input type="submit" value="add to cart" name="add_to_cart" class="btn">';
+      }else{
+         echo '<input type="submit" value="add to cart" name="add_to_cart" class="btn" disabled>';
+      }
+      ?>
      </form>
       <?php
          }
